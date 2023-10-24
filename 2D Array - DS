@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main()
+{
+     int a[6][6];
+     
+     int i,j;
+     
+     for(i=0; i<6; i++)
+     {
+         for(j=0; j<6; j++)
+         {
+             scanf("%d",&a[i][j]);
+         }
+     }  
+     
+     int in = -100;
+     int out = 0;
+     
+     for(i=0; i<4; i++)
+     {
+         for(j=0; j<4; j++)
+         {
+             out  = 0;
+             out += a[i][j];
+             out += a[i][j+1];
+             out += a[i][j+2];
+             out += a[i+1][j+1];
+             out += a[i+2][j];
+             out += a[i+2][j+1];
+             out += a[i+2][j+2];
+             
+             if(out > in)
+             {
+                 in = out;
+             }  
+         }
+     }
+    
+      printf("%d",in);   
+    
+    return 0;
+}
