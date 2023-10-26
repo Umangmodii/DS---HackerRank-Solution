@@ -1,0 +1,7 @@
+SinglyLinkedListNode* insertNodeAtHead(SinglyLinkedListNode* llist, int data) {
+       SinglyLinkedListNode* node  = create_singly_linked_list_node(data);
+       
+      node->next=llist;
+      return node;
+
+}
